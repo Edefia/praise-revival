@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revive Radio - Praise Revival Sanctuary International</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/radio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="images/praise revival.jpg" alt="Logo">
+                <div class="logo-text">
+                    <h1>Praise Revival</h1>
+                    <p>Sanctuary International</p>
+                </div>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-church"></i> About</a></li>
+                    <li><a href="index.html#sermons"><i class="fas fa-book-open"></i> Sermons</a></li>
+                    <li><a href="index.html#services"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="radio.html" class="active"><i class="fas fa-broadcast-tower"></i> Revive Radio</a></li>
+                    <!-- <li><a href="get-involved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li> -->
+                    <!-- <li><a href="give.html"><i class="fas fa-hand-holding-heart"></i> Give</a></li> -->
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="radio-hero">
+        <div class="container">
+            <div class="radio-hero-content">
+                <div class="radio-logo">
+                    <img src="images/Revive Radio colored .png" alt="Revive Radio Logo">
+                </div>
+                <h1>Welcome to <span>Revive Radio</span></h1>
+                <p>Your Channel for Spiritual Upliftment and Empowerment</p>
+                <div class="radio-player-large">
+                    <div class="player-controls-large">
+                        <button class="play-button-large" id="radioPlayButtonLarge">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="player-info-large">
+                            <div class="now-playing">
+                                <span>NOW PLAYING</span>
+                                <div class="equalizer">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <h3 id="currentProgramLarge">Continuous Worship & Praise</h3>
+                            <div class="player-volume">
+                                <i class="fas fa-volume-up"></i>
+                                <input type="range" min="0" max="100" value="80" class="volume-slider">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="program-schedule">
+        <div class="container">
+            <div class="section-header">
+                <h2>Program Schedule</h2>
+                <div class="divider"></div>
+                <p>Join us for these spiritually enriching programs throughout the week</p>
+            </div>
+            
+            <div class="schedule-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-day="all">All Programs</button>
+                    <button class="tab-button" data-day="monday">Monday</button>
+                    <button class="tab-button" data-day="tuesday">Tuesday</button>
+                    <button class="tab-button" data-day="wednesday">Wednesday</button>
+                    <button class="tab-button" data-day="thursday">Thursday</button>
+                    <button class="tab-button" data-day="friday">Friday</button>
+                    <button class="tab-button" data-day="saturday">Saturday</button>
+                    <button class="tab-button" data-day="sunday">Sunday</button>
+                </div>
+                
+                <div class="tab-content active" id="all-programs">
+                    <div class="programs-grid">
+                        <div class="program-card" data-days="monday,tuesday,thursday,friday">
+                            <div class="program-time">5:00 AM - 6:00 AM</div>
+                            <h3>GLORY SHOWERS</h3>
+                            <p>Daily Morning Devotional Prayer Time</p>
+                            <button class="btn-program-details" data-program="glory-showers">Learn More</button>
+                        </div>
+                        
+                        <div class="program-card" data-days="saturday">
+                            <div class="program-time">2:00 PM - 3:00 PM</div>
+                            <h3>CENTER FOR MORAL CLARITY</h3>
+                            <p>Reshaping Lives and Redefining Destinies</p>
+                            <button class="btn-program-details" data-program="moral-clarity">Learn More</button>
+                        </div>
+                        
+                        <div class="program-card" data-days="friday">
+                            <div class="program-time">12:00 PM - 12:30 PM</div>
+                            <h3>MID-DAY PROPHETIC PRAYER HOUR</h3>
+                            <p>Prophetic Prayers and Declarations</p>
+                            <button class="btn-program-details" data-program="midday-prayer">Learn More</button>
+                        </div>
+                        
+                        <div class="program-card" data-days="saturday">
+                            <div class="program-time">2:00 PM - 3:00 PM</div>
+                            <h3>LIVE WORSHIP ALTAR</h3>
+                            <p>1st Saturday of Every Month</p>
+                            <button class="btn-program-details" data-program="live-worship">Learn More</button>
+                        </div>
+                        
+                        <div class="program-card" data-days="sunday">
+                            <div class="program-time">7:00 PM - 8:00 PM</div>
+                            <h3>TESTIMONY PARADE</h3>
+                            <p>Celebrating God's Wonderful Works</p>
+                            <button class="btn-program-details" data-program="testimony-parade">Learn More</button>
+                        </div>
+                        
+                        <div class="program-card" data-days="sunday">
+                            <div class="program-time">7:00 PM - 8:00 PM</div>
+                            <h3>LIGHT ZONE</h3>
+                            <p>Christian Books and Literature Review</p>
+                            <button class="btn-program-details" data-program="light-zone">Learn More</button>
+                        </div>
+                        
+                        <div class="program-card" data-days="saturday">
+                            <div class="program-time">1:00 PM - 2:00 PM</div>
+                            <h3>GOSPEL MUSIC REVIEW</h3>
+                            <p>Review of Gospel Music and Their Impact</p>
+                            <button class="btn-program-details" data-program="gospel-music">Learn More</button>
+                        </div>
+                        
+                        <div class="program-card" data-days="monday,tuesday,wednesday,thursday,friday,saturday,sunday">
+                            <div class="program-time">24/7</div>
+                            <h3>CONTINUOUS WORSHIP</h3>
+                            <p>Continuous Worship, Praises and Inspirational Music</p>
+                            <button class="btn-program-details" data-program="continuous-worship">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="program-modal" id="program-modal">
+        <div class="program-modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="program-modal-body">
+                <!-- Program details will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <section class="radio-hosts">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Hosts</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="hosts-grid">
+                <div class="host-card">
+                    <div class="host-image">
+                        <img src="images/pastor1.jpg" alt="Rev. Ransford Abossey">
+                    </div>
+                    <div class="host-info">
+                        <h3>Rev. Ransford Abossey</h3>
+                        <p class="host-title">Senior Pastor & Radio Host</p>
+                        <p>Host of Glory Showers and Center for Moral Clarity</p>
+                        <div class="host-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="host-card">
+                    <div class="host-image">
+                        <img src="images/woman.jpg" alt="Minister Grace">
+                    </div>
+                    <div class="host-info">
+                        <h3>Minister Grace</h3>
+                        <p class="host-title">Worship Leader & Radio Host</p>
+                        <p>Host of Live Worship Altar and Gospel Music Review</p>
+                        <div class="host-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="radio-app">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-info">
+                    <h2>Take Revive Radio With You</h2>
+                    <p>Download our mobile app to listen to Revive Radio on the go. Get access to exclusive content, program schedules, and notifications for your favorite shows.</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-button">
+                            <i class="fab fa-google-play"></i>
+                            <div class="app-button-text">
+                                <span>GET IT ON</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="app-button">
+                            <i class="fab fa-apple"></i>
+                            <div class="app-button-text">
+                                <span>Download on the</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="app-image">
+                    <img src="images/radio-app-mockup.png" alt="Revive Radio App">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Revive Radio colored .png" alt="Praise Revival Sanctuary International">
+                    <p>Reviving the Nations with Praise!</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#sermons">Sermons</a></li>
+                        <li><a href="index.html#services">Events</a></li>
+                        <li><a href="radio.html">Revive Radio</a></li>
+                        <!-- <li><a href="get-involved.html">Get Involved</a></li> -->
+                        <!-- <li><a href="give.html">Give</a></li> -->
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Spintex Road, Accra, Ghana</p>
+                    <p><i class="fas fa-phone"></i> +233 XX XXX XXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@praiserevival.org</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h3>Subscribe to Newsletter</h3>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Praise Revival Sanctuary International. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/radio.js"></script>
+</body>
+</html>

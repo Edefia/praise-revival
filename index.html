@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praise Revival Sanctuary International</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/sermons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <div class="page-transition"></div>
+    <header>
+        <div class="container">
+            <div class="logo" onclick="window.location.href='index.html'">
+                <img src="images/praise revival.jpg" alt="Logo">
+                <div class="logo-text">
+                    <h1>Praise Revival</h1>
+                    <p>Sanctuary International</p>
+                </div>
+            </div>
+            <nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-church"></i> About</a></li>
+                    <li><a href="index.html#sermons"><i class="fas fa-book-open"></i> Sermons</a></li>
+                    <li><a href="index.html#services"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                    <li><a href="radio.html"><i class="fas fa-broadcast-tower"></i> Revive Radio</a></li>
+                    <!-- <li><a href="get-involved.html"><i class="fas fa-hands-helping"></i> Get Involved</a></li> -->
+                    <!-- <li><a href="give.html"><i class="fas fa-hand-holding-heart"></i> Give</a></li> -->
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="fade-in">Welcome to Praise Revival Sanctuary International</h1>
+            <p class="slide-in-up">Reviving the Nations with Praise!</p>
+            <div class="hero-buttons slide-in-up">
+                <a href="index.html#sermons" class="btn btn-primary">Latest Sermons</a>
+                <a href="radio.html" class="btn btn-secondary">Listen Live</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="welcome reveal-element">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Mission</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="welcome-content">
+                <div class="welcome-text" data-aos="fade-right" data-aos-delay="100">
+                    <p>We are committed to transforming lives through worship, prayer, and the Word of God. At Praise Revival Sanctuary International, we believe in creating a community where everyone can experience God's love and grace.</p>
+                    <a href="about.html" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="welcome-image" data-aos="fade-left" data-aos-delay="200">
+                    <img src="images/pastor.jpg" alt="Pastor">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services reveal-element" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Upcoming Services</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="service-times stagger-reveal">
+                <div class="service-card hover-effect" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Sunday Service</h3>
+                    <p>9:00 AM - 11:30 AM</p>
+                </div>
+                <div class="service-card hover-effect" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <h3>Wednesday Prayer</h3>
+                    <p>6:30 PM - 8:00 PM</p>
+                </div>
+                <div class="service-card hover-effect" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-bible"></i>
+                    </div>
+                    <h3>Friday Bible Study</h3>
+                    <p>7:00 PM - 8:30 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="radio-preview reveal-element">
+        <div class="container">
+            <div class="section-header light" data-aos="fade-up">
+                <h2>Revive Radio</h2>
+                <div class="divider"></div>
+                <p>Your Channel for Spiritual Upliftment and Empowerment</p>
+            </div>
+            <div class="radio-player" data-aos="zoom-in" data-aos-delay="100">
+                <div class="player-container">
+                    <div class="player-controls">
+                        <button class="play-button pulse" id="radioPlayButton">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <div class="player-info">
+                            <h3>Now Playing</h3>
+                            <p id="currentProgram">Continuous Worship & Praise</p>
+                        </div>
+                    </div>
+                    <a href="radio.html" class="btn btn-light">View All Programs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-preview reveal-element">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Upcoming Events</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card hover-effect" data-aos="fade-up" data-aos-delay="100">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">May</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Praise & Worship Night</h3>
+                        <p><i class="fas fa-clock"></i> 7:00 PM - 9:00 PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Main Sanctuary</p>
+                    </div>
+                </div>
+                <div class="event-card hover-effect" data-aos="fade-up" data-aos-delay="200">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">May</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Youth Conference</h3>
+                        <p><i class="fas fa-clock"></i> 10:00 AM - 4:00 PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Fellowship Hall</p>
+                    </div>
+                </div>
+                <div class="event-card hover-effect" data-aos="fade-up" data-aos-delay="300">
+                    <div class="event-date">
+                        <span class="day">29</span>
+                        <span class="month">May</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Community Outreach</h3>
+                        <p><i class="fas fa-clock"></i> 9:00 AM - 1:00 PM</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Spintex Community Center</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="events.html" class="btn btn-outline">View All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials reveal-element">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Testimonies</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="testimonial-slider" id="testimonialSlider" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"Praise Revival Sanctuary International has transformed my life. The teachings and community have brought me closer to God than ever before."</p>
+                        <div class="testimonial-author">- Sarah M.</div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"The worship experience at PRSI is unlike any other. I feel God's presence every time I attend service."</p>
+                        <div class="testimonial-author">- James K.</div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"Revive Radio has been a blessing in my life. I listen daily and it keeps me spiritually nourished throughout the week."</p>
+                        <div class="testimonial-author">- Grace T.</div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="prev-button" id="prevTestimonial"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                    </div>
+                    <button class="next-button" id="nextTestimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join Our Community</h2>
+                <p>Be part of our growing family and experience the love of Christ.</p>
+                <a href="contact.html" class="btn btn-primary">Connect With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sermons Section -->
+    <section class="sermons-section reveal-element" id="sermons">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Latest Sermons</h2>
+                <div class="divider"></div>
+                <p>Be inspired and uplifted by our recent messages</p>
+            </div>
+            <div class="sermons-grid">
+                <div class="sermon-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="sermon-thumbnail">
+                        <img src="images/praise 4.jpg" alt="Sermon Thumbnail">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="sermon-details">
+                        <h3>The Power of Praise</h3>
+                        <div class="sermon-meta">
+                            <span><i class="fas fa-calendar-alt"></i> April 12, 2025</span>
+                            <span><i class="fas fa-user"></i> Rev. Ransford</span>
+                        </div>
+                        <p class="sermon-description">Discover how praise can break chains and open doors in your spiritual life.</p>
+                        <div class="sermon-actions">
+                            <a href="#"><i class="fas fa-headphones"></i> Listen</a>
+                            <a href="#"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sermon-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="sermon-thumbnail">
+                        <img src="images/pastor1.jpg" alt="Sermon Thumbnail">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="sermon-details">
+                        <h3>Walking in Faith</h3>
+                        <div class="sermon-meta">
+                            <span><i class="fas fa-calendar-alt"></i> April 5, 2025</span>
+                            <span><i class="fas fa-user"></i> Rev. Ransford</span>
+                        </div>
+                        <p class="sermon-description">Learn how to maintain unwavering faith even in the midst of life's challenges.</p>
+                        <div class="sermon-actions">
+                            <a href="#"><i class="fas fa-headphones"></i> Listen</a>
+                            <a href="#"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sermon-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="sermon-thumbnail">
+                        <img src="images/pastor.jpg" alt="Sermon Thumbnail">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="sermon-details">
+                        <h3>The Grace of God</h3>
+                        <div class="sermon-meta">
+                            <span><i class="fas fa-calendar-alt"></i> March 29, 2025</span>
+                            <span><i class="fas fa-user"></i> Lady Pastor Grace</span>
+                        </div>
+                        <p class="sermon-description">Understand the depth and breadth of God's amazing grace in our lives.</p>
+                        <div class="sermon-actions">
+                            <a href="#"><i class="fas fa-headphones"></i> Listen</a>
+                            <a href="#"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sermon-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="sermon-thumbnail">
+                        <img src="images/preaching.jpg" alt="Sermon Thumbnail">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="sermon-details">
+                        <h3>Spiritual Growth</h3>
+                        <div class="sermon-meta">
+                            <span><i class="fas fa-calendar-alt"></i> March 22, 2025</span>
+                            <span><i class="fas fa-user"></i> Rev. Ransford</span>
+                        </div>
+                        <p class="sermon-description">Practical steps to nurture your spiritual life and grow in your relationship with God.</p>
+                        <div class="sermon-actions">
+                            <a href="#"><i class="fas fa-headphones"></i> Listen</a>
+                            <a href="#"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center sermon-view-all">
+                <a href="index.html#sermons" class="btn btn-outline" data-aos="fade-up">View All Sermons</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/praise revival.png" alt="Praise Revival Sanctuary International">
+                    <p>Reviving the Nations with Praise!</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#sermons">Sermons</a></li>
+                        <li><a href="index.html#services">Events</a></li>
+                        <li><a href="radio.html">Revive Radio</a></li>
+                        <!-- <li><a href="get-involved.html">Get Involved</a></li> -->
+                        <!-- <li><a href="give.html">Give</a></li> -->
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Spintex Road, Accra, Ghana</p>
+                    <p><i class="fas fa-phone"></i> +233 XX XXX XXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@praiserevival.org</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h3>Subscribe to Newsletter</h3>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Praise Revival Sanctuary International. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

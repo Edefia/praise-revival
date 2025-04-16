@@ -1,0 +1,327 @@
+/* About Page Specific Styles */
+
+/* Enhanced About Intro Section */
+.about-content {
+    gap: 40px;
+}
+
+.about-image {
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.rounded-image {
+    border-radius: var(--border-radius);
+    transition: transform 0.5s ease;
+}
+
+.about-image:hover .rounded-image {
+    transform: scale(1.03);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.story-highlight {
+    background-color: rgba(58, 139, 187, 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    position: relative;
+}
+
+.story-highlight i {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: var(--primary-color);
+    font-size: 24px;
+    opacity: 0.5;
+}
+
+.story-highlight blockquote {
+    margin-left: 40px;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+/* Enhanced Vision Mission Section */
+.vm-cards {
+    gap: 25px;
+}
+
+.vm-card {
+    padding: 30px;
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(58, 139, 187, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.vm-icon i {
+    font-size: 30px;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.vm-card:hover .vm-icon {
+    transform: scale(1.1);
+    background-color: var(--primary-color);
+}
+
+.vm-card:hover .vm-icon i {
+    color: white;
+}
+
+/* Enhanced Leadership Section */
+.leader-card {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: var(--box-shadow);
+}
+
+.leader-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.leader-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.leader-card:hover .leader-image img {
+    transform: scale(1.05);
+}
+
+.leader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.leader-card:hover .leader-overlay {
+    opacity: 1;
+}
+
+.leader-social {
+    display: flex;
+    gap: 15px;
+}
+
+.leader-social a {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.leader-social a:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.leader-info {
+    padding: 25px;
+}
+
+.leader-title {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.leader-title span {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.leader-divider {
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin-top: 5px;
+}
+
+/* Enhanced Beliefs Section */
+.beliefs-content {
+    gap: 40px;
+}
+
+.beliefs-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.beliefs-list li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 18px;
+    margin-top: 3px;
+}
+
+.beliefs-icon-divider {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.beliefs-icon-divider i {
+    font-size: 30px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.beliefs-icon-divider i:before,
+.beliefs-icon-divider i:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 1px;
+    background-color: rgba(58, 139, 187, 0.3);
+}
+
+.beliefs-icon-divider i:before {
+    right: 40px;
+}
+
+.beliefs-icon-divider i:after {
+    left: 40px;
+}
+
+.beliefs-image {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 30px 20px 20px;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.beliefs-image:hover .image-overlay {
+    transform: translateY(0);
+}
+
+.overlay-content h3 {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+.overlay-content p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Enhanced CTA Section */
+.cta {
+    background: linear-gradient(rgba(46, 59, 78, 0.9), rgba(46, 59, 78, 0.9)), url('../images/church-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 0;
+    margin-top: 80px;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.cta-content h2 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about-content,
+    .beliefs-content {
+        flex-direction: column;
+    }
+    
+    .about-image,
+    .beliefs-image {
+        margin-bottom: 30px;
+    }
+    
+    .vm-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .leaders-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .story-highlight blockquote {
+        font-size: 16px;
+    }
+}
