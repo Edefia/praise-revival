@@ -43,6 +43,7 @@
     border-radius: var(--border-radius);
     padding: 30px;
     margin-top: 40px;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -159,6 +160,7 @@
 
 .volume-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: 15px;
     height: 15px;
@@ -417,75 +419,135 @@
     transform: translateY(-3px);
 }
 
-/* Radio App Section */
-.radio-app {
+/* Church Features Section */
+.church-features {
     padding: 80px 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('../images/pattern-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-.app-content {
+.section-header.text-center {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.divider {
+    height: 3px;
+    width: 80px;
+    background-color: var(--accent-color);
+    margin: 0 auto 20px;
+}
+
+.section-header p {
+    font-size: 18px;
+    color: var(--text-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.features-content {
     display: flex;
     align-items: center;
-    gap: 50px;
+    gap: 60px;
+    margin-top: 40px;
 }
 
-.app-info {
+.features-info {
     flex: 1;
 }
 
-.app-info h2 {
+.features-info h2 {
+    font-size: 28px;
     margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
-.app-info p {
+.features-info > p {
     margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
-.app-buttons {
-    display: flex;
-    gap: 20px;
-}
-
-.app-button {
-    display: flex;
-    align-items: center;
-    background-color: var(--dark-color);
-    color: white;
-    padding: 10px 20px;
-    border-radius: var(--border-radius);
-    transition: var(--transition);
-}
-
-.app-button:hover {
-    background-color: var(--primary-color);
-    transform: translateY(-3px);
-}
-
-.app-button i {
-    font-size: 24px;
-    margin-right: 10px;
-}
-
-.app-button-text {
+.features-list {
     display: flex;
     flex-direction: column;
+    gap: 25px;
 }
 
-.app-button-text span {
-    font-size: 12px;
-}
-
-.app-button-text strong {
-    font-size: 16px;
-}
-
-.app-image {
-    flex: 1;
+.feature-item {
     display: flex;
-    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.app-image img {
-    max-width: 300px;
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item i {
+    font-size: 28px;
+    color: var(--accent-color);
+    background-color: rgba(245, 197, 66, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.feature-item:hover i {
+    transform: scale(1.1);
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.feature-text p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.features-image {
+    flex: 1;
+    position: relative;
+}
+
+.features-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.features-image:hover img {
+    transform: scale(1.03);
 }
 
 /* Responsive Styles */
@@ -494,13 +556,29 @@
         font-size: 36px;
     }
     
-    .app-content {
+    .features-content {
         flex-direction: column;
     }
     
-    .app-image {
+    .features-image {
         order: -1;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .features-image img {
+        max-width: 500px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .feature-item {
+        padding: 20px;
+    }
+    
+    .feature-item i {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
     }
 }
 
@@ -543,7 +621,42 @@
         font-size: 28px;
     }
     
-    .app-buttons {
-        flex-direction: column;
+    .church-features {
+        padding: 60px 0;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .section-header p {
+        font-size: 16px;
+    }
+    
+    .features-info h2 {
+        font-size: 24px;
+    }
+    
+    .features-list {
+        gap: 15px;
+    }
+    
+    .feature-item {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .feature-item i {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .feature-text h3 {
+        font-size: 18px;
+    }
+    
+    .feature-text p {
+        font-size: 14px;
     }
 }

@@ -1,24 +1,58 @@
 /* About Page Specific Styles */
 
+/* Global About Page Styling */
+.about-section {
+    padding: 80px 0;
+    position: relative;
+}
+
+.about-section:nth-child(even) {
+    background-color: rgba(248, 249, 250, 0.7);
+}
+
+.section-divider {
+    height: 3px;
+    width: 80px;
+    background: var(--accent-color);
+    margin: 0 auto 40px;
+}
+
 /* Enhanced About Intro Section */
 .about-content {
-    gap: 40px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 992px) {
+    .about-content {
+        flex-wrap: nowrap;
+    }
 }
 
 .about-image {
     position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
     border-radius: var(--border-radius);
     overflow: hidden;
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .rounded-image {
     border-radius: var(--border-radius);
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, filter 0.3s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .about-image:hover .rounded-image {
     transform: scale(1.03);
+    filter: brightness(1.05);
 }
 
 .image-caption {
@@ -26,66 +60,181 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     color: white;
-    padding: 15px;
+    padding: 15px 20px;
     font-size: 14px;
     text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover .image-caption {
+    transform: translateY(0);
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.section-header.text-left {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.section-header.text-left h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header.text-left h2:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 70px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.about-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--text-color);
 }
 
 .story-highlight {
     background-color: rgba(58, 139, 187, 0.1);
     border-left: 4px solid var(--primary-color);
-    padding: 20px;
-    margin: 30px 0;
+    padding: 30px;
+    margin: 40px 0;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
     position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .story-highlight i {
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 20px;
+    left: 20px;
     color: var(--primary-color);
-    font-size: 24px;
+    font-size: 28px;
     opacity: 0.5;
 }
 
 .story-highlight blockquote {
     margin-left: 40px;
     font-style: italic;
-    font-size: 18px;
+    font-size: 1.2rem;
     color: var(--secondary-color);
     line-height: 1.6;
+    font-weight: 500;
+}
+
+.page-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/congregation.jpg') center/cover no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+}
+
+.banner-content h1 {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.breadcrumbs a {
+    color: var(--accent-color);
+}
+
+.breadcrumbs i {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 /* Enhanced Vision Mission Section */
+.vision-mission {
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('../images/pattern-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 80px 0;
+}
+
 .vm-cards {
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
 }
 
 .vm-card {
-    padding: 30px;
+    padding: 40px 30px;
     border-radius: var(--border-radius);
     background-color: white;
     box-shadow: var(--box-shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.vm-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--accent-color);
+    z-index: 2;
+    transition: height 0.3s ease;
+}
+
+.vm-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.vm-card:hover::before {
+    height: 10px;
 }
 
 .vm-icon {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     background-color: rgba(58, 139, 187, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(58, 139, 187, 0.2);
 }
 
 .vm-icon i {
-    font-size: 30px;
+    font-size: 32px;
     color: var(--primary-color);
     transition: color 0.3s ease;
 }
@@ -99,17 +248,64 @@
     color: white;
 }
 
+.vm-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.vm-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.vm-card:hover h3::after {
+    width: 60px;
+}
+
+.vm-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
 /* Enhanced Leadership Section */
+.leadership {
+    padding: 80px 0;
+}
+
+.leaders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
 .leader-card {
     overflow: hidden;
     border-radius: var(--border-radius);
     background-color: white;
     box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.leader-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .leader-image {
     position: relative;
-    height: 300px;
+    height: 350px;
     overflow: hidden;
 }
 
@@ -117,11 +313,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, filter 0.3s ease;
 }
 
 .leader-card:hover .leader-image img {
     transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .leader-overlay {
@@ -130,13 +327,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .leader-card:hover .leader-overlay {
@@ -146,11 +343,19 @@
 .leader-social {
     display: flex;
     gap: 15px;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.3s ease 0.1s, opacity 0.3s ease 0.1s;
+}
+
+.leader-card:hover .leader-social {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .leader-social a {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     background-color: white;
     border-radius: 50%;
     display: flex;
@@ -158,6 +363,7 @@
     justify-content: center;
     color: var(--primary-color);
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .leader-social a:hover {
@@ -167,11 +373,33 @@
 }
 
 .leader-info {
-    padding: 25px;
+    padding: 30px;
+    position: relative;
+}
+
+.leader-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px;
+    right: 30px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+}
+
+.leader-info h3 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.leader-card:hover .leader-info h3 {
+    color: var(--primary-color);
 }
 
 .leader-title {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -180,7 +408,9 @@
 .leader-title span {
     color: var(--primary-color);
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
 }
 
 .leader-divider {
@@ -188,36 +418,121 @@
     height: 3px;
     background-color: var(--accent-color);
     margin-top: 5px;
+    transition: width 0.3s ease;
+}
+
+.leader-card:hover .leader-divider {
+    width: 80px;
+}
+
+.leader-info p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-color);
 }
 
 /* Enhanced Beliefs Section */
+.beliefs {
+    padding: 80px 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('../images/bible-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 .beliefs-content {
-    gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.beliefs-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.beliefs-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.beliefs-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .beliefs-list li {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     display: flex;
     align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beliefs-list li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .beliefs-list li i {
     color: var(--primary-color);
-    margin-right: 10px;
-    font-size: 18px;
-    margin-top: 3px;
+    margin-right: 15px;
+    font-size: 20px;
+    min-width: 25px;
+    transition: transform 0.3s ease;
+}
+
+.beliefs-list li:hover i {
+    transform: scale(1.2);
 }
 
 .beliefs-icon-divider {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
+    text-align: center;
+    margin: 40px 0;
+    position: relative;
+}
+
+.beliefs-icon-divider::before,
+.beliefs-icon-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent-color));
+}
+
+.beliefs-icon-divider::before {
+    right: 60%;
+}
+
+.beliefs-icon-divider::after {
+    left: 60%;
+    background: linear-gradient(to left, transparent, var(--accent-color));
 }
 
 .beliefs-icon-divider i {
     font-size: 30px;
-    color: var(--primary-color);
+    color: var(--accent-color);
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     position: relative;
+    z-index: 1;
 }
 
 .beliefs-icon-divider i:before,
@@ -242,7 +557,24 @@
     position: relative;
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    margin: 0 auto;
+    height: 400px;
+}
+
+.beliefs-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.beliefs-image:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .image-overlay {
@@ -250,57 +582,162 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    padding: 30px 20px 20px;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
+    padding: 30px;
     color: white;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .beliefs-image:hover .image-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s ease 0.1s, opacity 0.4s ease 0.1s;
+}
+
+.beliefs-image:hover .overlay-content {
     transform: translateY(0);
+    opacity: 1;
 }
 
 .overlay-content h3 {
     color: white;
-    margin-bottom: 5px;
-    font-size: 22px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .overlay-content p {
-    font-size: 14px;
+    font-size: 16px;
     opacity: 0.9;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Enhanced CTA Section */
 .cta {
-    background: linear-gradient(rgba(46, 59, 78, 0.9), rgba(46, 59, 78, 0.9)), url('../images/church-bg.jpg');
+    background: linear-gradient(rgba(46, 59, 78, 0.85), rgba(46, 59, 78, 0.95)), url('../images/church-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 80px 0;
-    margin-top: 80px;
+    padding: 100px 0;
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, var(--primary-color), var(--accent-color));
 }
 
 .cta-content {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
 }
 
 .cta-content h2 {
     color: white;
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+}
+
+.cta-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-color);
 }
 
 .cta-content p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 18px;
-    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    line-height: 1.8;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    font-weight: 300;
+}
+
+.cta .btn {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 
 /* Responsive Styles */
+@media (max-width: 1200px) {
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    
+    .vm-cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .leaders-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .cta-content h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-content,
+    .beliefs-content {
+        gap: 40px;
+    }
+    
+    .section-header.text-left h2 {
+        font-size: 2.2rem;
+    }
+    
+    .story-highlight blockquote {
+        font-size: 1.1rem;
+    }
+    
+    .leader-image {
+        height: 320px;
+    }
+    
+    .cta-content p {
+        font-size: 1.2rem;
+    }
+}
+
 @media (max-width: 768px) {
     .about-content,
     .beliefs-content {
@@ -309,19 +746,95 @@
     
     .about-image,
     .beliefs-image {
-        margin-bottom: 30px;
+        margin-bottom: 40px;
+        max-width: 100%;
     }
     
     .vm-cards {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
     
     .leaders-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 40px;
+    }
+    
+    .story-highlight {
+        padding: 25px;
     }
     
     .story-highlight blockquote {
-        font-size: 16px;
+        font-size: 1rem;
+        margin-left: 30px;
+    }
+    
+    .story-highlight i {
+        font-size: 24px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .cta-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-section {
+        padding: 60px 0;
+    }
+    
+    .section-header.text-left h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-text p,
+    .beliefs-text p {
+        font-size: 1rem;
+    }
+    
+    .vm-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .vm-icon i {
+        font-size: 28px;
+    }
+    
+    .vm-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .leader-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    .leader-title span {
+        font-size: 1rem;
+    }
+    
+    .cta {
+        padding: 80px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content p {
+        font-size: 1rem;
+    }
+    
+    .cta .btn {
+        padding: 12px 30px;
+        font-size: 1rem;
     }
 }
